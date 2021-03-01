@@ -1,2 +1,3 @@
 # portal_website
-portal website mahasiswa ukdc 2019
+portal website News from ukdc-19
+this is simple dynamic news website with admin dashboard
