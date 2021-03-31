@@ -1,24 +1,3 @@
-<?php
-//nampilkan format tanggal
-$tanggal = mktime(date('m'), date("d"), date('Y'));
-echo "Tanggal : <b> " . date("d-m-Y", $tanggal ) . "</b>";
-date_default_timezone_set("Asia/Jakarta");
-$jam = date ("H:i:s");
-echo " | Pukul : <b> " . $jam . " " ." </b> ";
-$a = date ("H");
-if (($a>=6) && ($a<=11)) {
-    echo " <b>, Selamat Pagi !! </b>";
-}else if(($a>=11) && ($a<=15)){
-    echo " , Selamat  Pagi !! ";
-}elseif(($a>15) && ($a<=18)){
-    echo ", Selamat Siang !!";
-}else{
-    echo ", <b> Selamat Malam </b>";
-}
-
-?>
- 
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +9,12 @@ if (($a>=6) && ($a<=11)) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
 <!--Navbar-->
+  <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -54,16 +34,24 @@ if (($a>=6) && ($a<=11)) {
             </div>
         </div>
         </nav>
-    
-   
+  </div>
+<!--bawah navbar-->
+  <div class="container">
+  <p class="p-1 mb-2 bg-info text-dark text-center">Ayo Membaca Biar Wawasan Makin Joss</p>
+  
+  </div>
+
+       
 
 <!--konten bawah--->
-
+<div class="container Konten">
       <div class="row " >
       <!--konten kiri-->
-        <div class="col-7  " >
+    
+        <div class="col-sm-7   " >
             <div class="latest">
                 <h3>Latest</h3>
+            <a href="formatarticle.php" style="text-decoration:none;">
             <div class="card mb-3 " style="max-width: 740px;">
                 <div class="row g-0">
                   <div class="col-md-4">
@@ -82,14 +70,20 @@ if (($a>=6) && ($a<=11)) {
                   </div>
                 </div>
               </div>
-
-              <button type="button" class="btn btn-info ">Gas Skuy</button>
+            </a> 
+                <div class="d-flex justify-content-center"> 
+                <button type="button" class="btn btn-info " >Gas Skuy</button>
+                </div>
+               
+          
+            
             </div>
         </div>
         <!--konten kiri-->
         <div class="col ">
             <div class="hangat">
             <h3>Hot News</h3>
+            <a href="formatarticle.php" style="text-decoration:none;">
             <div class="card mb-3 " style="max-width: 550px;">
                 <div class="row g-0">
                   <div class="col-md-2">
@@ -103,10 +97,12 @@ if (($a>=6) && ($a<=11)) {
                   </div>
                 </div>
               </div>
+            </a>
             </div>
 
             <div class="trending">
             <h3>Populer</h3>
+            <a href="formatarticle.php" style="text-decoration:none;">
             <div class="card mb-3 " style="max-width: 550px;">
                 <div class="row g-0">
                   <div class="col-md-2">
@@ -121,22 +117,27 @@ if (($a>=6) && ($a<=11)) {
                 </div>
               </div>
             </div>
+            </a>
         </div>
 
 
       </div>
-
+</div>
 
 
 
 
     
-     
-        <div class="footer-bottom">
-                <div class="container-fluid text-center">
-                    <p>Copyright &copy; 2021, Developed by</p>
-                </div>
-        </div>  
+  <div class="container">
+      <div class="footer-bottom">
+            <div class="container-fluid text-center bg-light">
+                    <p>Copyright &copy; 2021, Developed by <a href="https://github.com/reyfuu" target= "_blank">reyfuu</a>  and <a href="https://github.com/NoraNekoIT"target= "_blank">NoraNekoIT</a> </p>
+            </div>
+      </div>      
+  
+  
+  </div> 
+      
     
   
 
