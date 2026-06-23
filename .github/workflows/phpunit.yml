@@ -1,0 +1,36 @@
+name: PHP Unit Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, pdo, pdo_mysql
+        coverage: none
+
+    - name: Install PHPUnit
+      run: |
+        wget https://phar.phpunit.de/phpunit-10.phar
+        chmod +x phpunit-10.phar
+        sudo mv phpunit-10.phar /usr/local/bin/phpunit
+
+    - name: Verify PHPUnit Installation
+      run: phpunit --version
+
+    - name: Run Unit Tests
+      run: phpunit tests/
